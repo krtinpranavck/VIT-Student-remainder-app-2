@@ -6,7 +6,7 @@ dotenv.config();
 const app = express()
 
 app.get("/", (req, res) => {
-    res.json({message: "Welcome to the VIT Student Remainder App API!"});
+    res.json({message: "Welcome to the VIT Student Reminder App API!"});
 });
 
 app.listen(5001, () =>{
