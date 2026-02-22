@@ -1,0 +1,163 @@
+:root {
+  /* HSL Color Palette - Light Mode (Default) */
+  --primary: 250 60% 60%;
+  /* Soft Purple */
+  --primary-dark: 250 60% 50%;
+  --primary-light: 250 60% 95%;
+
+  --secondary: 180 50% 50%;
+  /* Teal/Cyan */
+
+  --bg-body: 220 20% 97%;
+  /* Light Blueish Grey */
+  --bg-card: 0 0% 100%;
+  --bg-sidebar: 240 10% 15%;
+  /* Dark Sidebar */
+
+  --text-main: 220 10% 20%;
+  --text-muted: 220 10% 50%;
+  --text-light: 220 20% 95%;
+
+  /* Priority Colors */
+  --priority-high: 0 70% 60%;
+  --priority-medium: 30 90% 60%;
+  --priority-low: 140 60% 50%;
+
+  /* Spacing & Radius */
+  --radius-lg: 1rem;
+  --radius-md: 0.75rem;
+  --radius-sm: 0.5rem;
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Dark Theme Overrides */
+body.dark-theme {
+  --bg-body: 220 15% 10%;
+  /* Dark Grey/Black */
+  --bg-card: 220 15% 16%;
+  /* Slightly lighter dark */
+  --bg-sidebar: 240 10% 12%;
+  /* Even darker sidebar */
+
+  --text-main: 220 20% 90%;
+  --text-muted: 220 10% 65%;
+  --text-light: 220 20% 95%;
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+
+  /* Ensure primary colors pop but aren't too bright */
+  --primary-light: 250 30% 25%;
+}
+
+/* Specific component overrides for Dark Mode */
+body.dark-theme .subject-card,
+body.dark-theme .event-card,
+body.dark-theme .info-card,
+body.dark-theme .club-card,
+body.dark-theme .info-panel,
+body.dark-theme .settings-panel,
+body.dark-theme .task-panel,
+body.dark-theme .calendar-wrapper,
+body.dark-theme .table-responsive,
+body.dark-theme .table-wrapper {
+  background-color: hsl(var(--bg-card));
+  color: hsl(var(--text-main));
+}
+
+body.dark-theme .calendar-grid,
+body.dark-theme .custom-table th,
+body.dark-theme .custom-table td,
+body.dark-theme .menu-table th,
+body.dark-theme .menu-table td,
+body.dark-theme .input,
+body.dark-theme select,
+body.dark-theme textarea {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-theme .calendar-day {
+  background-color: hsl(var(--bg-card));
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-theme .calendar-day:hover {
+  background-color: rgba(115, 66, 66, 0.05);
+}
+
+body.dark-theme .category-tag {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: hsl(var(--text-muted));
+}
+
+body.dark-theme input:not(.edit-input-large),
+body.dark-theme select,
+body.dark-theme textarea {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.dark-theme .btn-outline {
+  background-color: transparent;
+}
+
+body.dark-theme .btn-outline:hover {
+  background-color: hsl(var(--primary));
+}
+
+/* Common Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: hsl(var(--bg-body));
+  color: hsl(var(--text-main));
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--text-muted) / 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--text-muted) / 0.5);
+}
